@@ -1,0 +1,71 @@
+{
+   "abstract" : "Prompt for user input with a default option",
+   "author" : [
+      "David Golden <dagolden@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300015, CPAN::Meta::Converter version 2.120630",
+   "license" : [
+      "apache_2_0"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "IO-Prompt-Tiny",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "examples",
+         "corpus"
+      ],
+      "package" : [
+         "DB"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : "0",
+            "Exporter" : "0",
+            "perl" : "5.006",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Test::More" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "IO::Prompt::Tiny" : {
+         "file" : "lib/IO/Prompt/Tiny.pm",
+         "version" : "0.001"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-io-prompt-tiny at rt.cpan.org",
+         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=IO-Prompt-Tiny"
+      },
+      "homepage" : "https://github.com/dagolden/io-prompt-tiny",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/dagolden/io-prompt-tiny.git",
+         "web" : "https://github.com/dagolden/io-prompt-tiny"
+      }
+   },
+   "version" : "0.001"
+}
+
