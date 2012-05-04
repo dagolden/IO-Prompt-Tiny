@@ -43,6 +43,12 @@ prompting.
 
 If no default is provided, an empty string will be used instead.
 
+Unlike ExtUtils::MakeMaker::prompt(), this prompt() does not use
+prototypes, so this will work as expected:
+
+  my @args = ($prompt, $default);
+  prompt(@args);
+
 =head1 ENVIRONMENT
 
 =head2 PERL_MM_USE_DEFAULT
