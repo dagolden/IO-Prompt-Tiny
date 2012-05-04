@@ -12,7 +12,7 @@ our @ISA = qw/Exporter/;
 our @EXPORT_OK = qw/prompt/;
 
 # Copied from ExtUtils::MakeMaker (by many authors)
-sub prompt ($;$) {  ## no critic
+sub prompt {
   my($mess, $def) = @_;
   Carp::croak("prompt function called without an argument") 
     unless defined $mess;
@@ -94,6 +94,12 @@ environment variable is set to true, the default will be used without
 prompting.
 
 If no default is provided, an empty string will be used instead.
+
+Unlike ExtUtils::MakeMaker::prompt(), this prompt() does not use
+prototypes, so this will work as expected:
+
+  my @args = ($prompt, $default);
+  prompt(@args);
 
 =head1 ENVIRONMENT
 
