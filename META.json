@@ -68,8 +68,7 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "mailto" : "bug-IO-Prompt-Tiny@rt.cpan.org",
-         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=IO-Prompt-Tiny"
+         "web" : "https://github.com/dagolden/io-prompt-tiny/issues"
       },
       "homepage" : "https://metacpan.org/release/IO-Prompt-Tiny",
       "repository" : {

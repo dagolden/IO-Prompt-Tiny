@@ -95,7 +95,7 @@ L<Term::Prompt>
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through the issue tracker
-at L<https://rt.cpan.org/Public/Dist/Display.html?Name=IO-Prompt-Tiny>.
+at L<https://github.com/dagolden/io-prompt-tiny/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
