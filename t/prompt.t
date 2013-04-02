@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Test::More 0.96;
 
-use Capture::Tiny qw/capture/;
+use Capture::Tiny 0.12 qw/capture/;
 use File::Temp qw/tempfile/;
 
 use IO::Prompt::Tiny qw/prompt/;
