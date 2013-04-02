@@ -2,6 +2,8 @@ Revision history for IO-Prompt-Tiny
 
 {{$NEXT}}
 
+0.002     2013-04-02 10:50:00 America/New_York
+
     - Clarified that test require Capture::Tiny 0.12 or later
 
 0.001     2012-05-04 13:46:28 America/New_York
