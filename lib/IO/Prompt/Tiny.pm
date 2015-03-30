@@ -5,7 +5,7 @@ use warnings;
 package IO::Prompt::Tiny;
 # ABSTRACT: Prompt for user input with a default option
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 use Exporter ();
 use Carp     ();
