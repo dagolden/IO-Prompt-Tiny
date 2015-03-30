@@ -8,55 +8,55 @@ package IO::Prompt::Tiny;
 our $VERSION = '0.003';
 
 use Exporter ();
-use Carp ();
-our @ISA = qw/Exporter/;
+use Carp     ();
+our @ISA       = qw/Exporter/;
 our @EXPORT_OK = qw/prompt/;
 
 # Copied from ExtUtils::MakeMaker (by many authors)
 sub prompt {
-  my($mess, $def) = @_;
-  Carp::croak("prompt function called without an argument") 
-    unless defined $mess;
+    my ( $mess, $def ) = @_;
+    Carp::croak("prompt function called without an argument")
+      unless defined $mess;
 
-  my $dispdef = defined $def ? "[$def] " : " ";
-  $def = defined $def ? $def : "";
+    my $dispdef = defined $def ? "[$def] " : " ";
+    $def = defined $def ? $def : "";
 
-  local $|=1;
-  local $\;
-  print "$mess $dispdef";
+    local $| = 1;
+    local $\;
+    print "$mess $dispdef";
 
-  my $ans;
-  if ($ENV{PERL_MM_USE_DEFAULT} || ! _is_interactive()) {
-    print "$def\n";
-  }
-  else {
-    $ans = <STDIN>;
-    if( defined $ans ) {
-      chomp $ans;
+    my $ans;
+    if ( $ENV{PERL_MM_USE_DEFAULT} || !_is_interactive() ) {
+        print "$def\n";
     }
-    else { # user hit ctrl-D
-      print "\n";
+    else {
+        $ans = <STDIN>;
+        if ( defined $ans ) {
+            chomp $ans;
+        }
+        else { # user hit ctrl-D
+            print "\n";
+        }
     }
-  }
 
-  return (!defined $ans || $ans eq '') ? $def : $ans;
+    return ( !defined $ans || $ans eq '' ) ? $def : $ans;
 }
 
 # Copied (without comments) from IO::Interactive::Tiny by Daniel Muey,
 # based on IO::Interactive by Damian Conway and brian d foy
 sub _is_interactive {
-  my ($out_handle) = (@_, select);
-  return 0 if not -t $out_handle;
-  if ( tied(*ARGV) or defined(fileno(ARGV)) ) {
-    return -t *STDIN if defined $ARGV && $ARGV eq '-';
-    return @ARGV>0 && $ARGV[0] eq '-' && -t *STDIN if eof *ARGV;
-    return -t *ARGV;
-  }
-  else {
-    return -t *STDIN;
-  }
+    my ($out_handle) = ( @_, select );
+    return 0 if not -t $out_handle;
+    if ( tied(*ARGV) or defined( fileno(ARGV) ) ) {
+        return -t *STDIN if defined $ARGV && $ARGV eq '-';
+        return @ARGV > 0 && $ARGV[0] eq '-' && -t *STDIN if eof *ARGV;
+        return -t *ARGV;
+    }
+    else {
+        return -t *STDIN;
+    }
 }
- 
+
 1;
 
 =head1 SYNOPSIS
