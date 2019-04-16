@@ -47,7 +47,7 @@ sub prompt {
 sub _is_interactive {
     my ($out_handle) = ( @_, select );
     return 0 if not -t $out_handle;
-    if ( tied(*ARGV) or defined( fileno(ARGV) ) ) {
+    if ( tied(*ARGV) or defined( fileno(*::ARGV) ) ) {
         return -t *STDIN if defined $ARGV && $ARGV eq '-';
         return @ARGV > 0 && $ARGV[0] eq '-' && -t *STDIN if eof *ARGV;
         return -t *ARGV;
